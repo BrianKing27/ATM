@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/BrianKing27/ATM/issues"
   },
-  "homepage": "https://github.com/BrianKing27/ATM#readme"
+  "homepage": "https://github.com/BrianKing27/ATM#readme",
+  "dependencies": {
+    "prompt-sync": "^4.1.6"
+  }
 }
