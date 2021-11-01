@@ -1,37 +1,25 @@
 "use strict";
-const {pin, balance} = require("./account.js");
+let {pin, balance} = require("./account.js");
+const prompt = require('prompt-sync')();
 //TODO: Import necessary values from account.js
-console.log(pin);
-function getBalance(accountBalance) {
+
+function getBalance() {
   //TODO: Return the customer's acct. balance
-  if(validatePin() === true){
-    console.log(balance)
-  }
-  else {
-    validatePin === false
-    return
-  }
+    console.log(balance);
 } 
 
-
 function withdraw(withdrawAmount) {
-  if(validatePin() === true){            //TODO: withdraw amount from current acct. balance
-    balance -= withdrawAmount;
-    console.log(balance);
-  }
-  else {
-    return
-  }
-
+  //TODO: withdraw amount from current acct. balance
+  withdrawAmount = prompt('How much would you like to withdraw?');
+  withdrawAmount = parseInt(withdrawAmount);
+  balance = balance - withdrawAmount;
+  console.log(balance);
+}
 function deposit(depositAmount) {
-  if(validatePin() === true){
-    balance += depositAmount;
-    console.log(balance);
-  }
-  else {
-    return
-  }
-
+  depositAmount = prompt('How much would you like to deposit? ');
+  depositAmount = parseInt(depositAmount);
+  balance = balance + depositAmount;
+  console.log(balance);
   //TODO: deposit amount to current acct. balance
   // Log the current balance after deposit is made
 }
@@ -41,7 +29,7 @@ function validatePin(enteredPin) {
       return true                        //Allow access to ATM if matching
   }                                      //Return value should be a Boolean (true or false)
   else{
-    return false
+    return false;
   }
 
 
@@ -51,8 +39,8 @@ function validatePin(enteredPin) {
 //TODO: Export these functions
 
 module.exports = {
-  enterPin: validatePin(),
-  checkBalance: getBalance(),
-  makeWithdraw: withdraw(),
-  makeDeposit: deposit(),
+  validatePin,
+  getBalance,
+  withdraw,
+  deposit,
 };
