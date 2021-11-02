@@ -13,13 +13,13 @@ function withdraw(withdrawAmount) {
   withdrawAmount = prompt('How much would you like to withdraw?');
   withdrawAmount = parseInt(withdrawAmount);
   balance = balance - withdrawAmount;
-  console.log(balance);
+  console.log("Your new balance: " + balance);
 }
 function deposit(depositAmount) {
   depositAmount = prompt('How much would you like to deposit? ');
   depositAmount = parseInt(depositAmount);
   balance = balance + depositAmount;
-  console.log(balance);
+  console.log("Your new balance: " + balance);
   //TODO: deposit amount to current acct. balance
   // Log the current balance after deposit is made
 }

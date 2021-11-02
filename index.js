@@ -15,11 +15,13 @@ accessATM();
 function accessATM() {
   let pinNumber = '';
   pinNumber = '';
-  pinNumber = prompt("Please enter your pin number: ");   //TODO: Prompt users for their pin
+  pinNumber = prompt("Please enter your pin number: ");  //TODO: Prompt users for their pin
   pinNumber = parseInt(pinNumber);
+
   let trueOrFalse = '';
   trueOrFalse = validatePin(pinNumber);
   if(trueOrFalse === true){
+    console.log(pinNumber);
     mainMenu();
     return
   }
@@ -34,7 +36,7 @@ function mainMenu() {
   let menu = "Please enter a number to choose a menu option: " + '\n' + "View Balance: (1)" + '\n' + "Withdraw: (2)" + '\n' + "Deposit: (3)" + '\n' + "Restart: (4)" + '\n' + "Exit: (5)" + '\n';
   console.log(menu);
 
-  switch(prompt('Choose an option:  ')){
+  switch(prompt('Choose an option: ')){
     case '1' || 1:
       getBalance();
       mainMenu()
@@ -53,6 +55,9 @@ function mainMenu() {
       return
     case '5' || 5:
       break;
+    default:
+      console.log('\n')
+      mainMenu();
   }
 
   //! Remember - we should keep prompting the user for options until they quit!
